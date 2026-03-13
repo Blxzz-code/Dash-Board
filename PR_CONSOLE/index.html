@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>MIGRATION_LOG_DUAL_SYNC</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>MIGRATION_MANIFEST_PR_SYNC</h1>
+        <span class="dim">FLOW: SOURCE > DEVELOP > TESTING</span>
+    </div>
+    <div style="text-align:right">
+        <span class="pr-auth">AUTH: DEV_STATION_01</span>
+    </div>
+</header>
+
+<div style="margin-bottom: 10px;">
+    <label for="pr-number">Número PR:</label>
+    <input type="number" id="pr-number" placeholder="Ej: 14" min="1" style="width:60px; margin-left:5px;" />
+    <button id="new-pr-btn">Crear PR Nueva</button>
+</div>
+
+<div class="container" id="pr-container"></div>
+
+<div style="margin: 20px;">
+    <button id="export-btn">Exportar PDF</button>
+</div>
+
+<div id="conflict-modal" class="modal">
+    <div class="modal-content">
+        <h3>Conflicto detectado</h3>
+        <textarea id="conflict-msg" rows="4" placeholder="Escribe la resolución aquí..."></textarea>
+        <div style="margin-top:10px; text-align:right;">
+            <button id="conflict-save-btn">Guardar</button>
+            <button id="conflict-cancel-btn">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
